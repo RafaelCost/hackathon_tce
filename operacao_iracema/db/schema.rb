@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_26_140735) do
+ActiveRecord::Schema.define(version: 2020_01_26_174141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "denuncia", force: :cascade do |t|
+    t.string "numero_licitacao"
+    t.boolean "suspeita"
+  end
 
   create_table "itens_licitacoes", force: :cascade do |t|
     t.string "codigo_municipio"

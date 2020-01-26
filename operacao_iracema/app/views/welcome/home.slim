@@ -8,19 +8,18 @@
           h4.title  ACOMPANHAMENTO DOS GASTOS PÚBLICOS COM DATA SCIENCE
           p.content Um projeto aberto que possui como finalidade a fiscalização de gastos públicos, como a merenda escolar e o compartilhamento de informações de forma simplificada.
 .row
-  .col.s12.m6
-    = image_tag('pirao.jpeg', class: 'responsive-img')
-    .container
-    .svg
-      = show_svg('data_science.svg')
-  .col.s12.m6
-    .container
-      h4.title Onde há corrupção os direitos básicos são negados e o  futuro perde as chances de mudar a sociedade
-.row
-  .col.s12.m6
-    .container
-    .svg
-      = show_svg('data_science.svg')
-  .col.s12.m6
-    .container
-      
+  .col.s12
+    .content
+      .header-text
+        .suspeitas
+          - if @item_licitacao.present?
+            .col.s8.offset-s2.card.container.denuncia_form.center-align
+              h4.title ENCONTRAMOS ITENS SUSPEITOS EM LICITAÇÕES ENVOLVENDO MERENDA ESCOLAR
+              p
+                h5 NUMA LICITAÇÃO ENVOLVENDO MERENDA ESCOLAR
+                h5 ENCONTRAMOS "#{@item_licitacao.descricao_item_licitacao}"
+        .col.s8.offset-s2.center
+          p
+            h5 Você considera isso suspeito?
+          p
+            h5 Então colabore enviando um email com o código do município #{@item_licitacao.codigo_municipio} e a descrição da licitação para #{link_to 'ouvidoria@tce.ce.gov.br', 'mailto: ouvidoria@tce.ce.gov.br'} :)

@@ -1,0 +1,33 @@
+<div class='container' >
+  <div id='opcGeral' >
+    <h3> Adivinhe que merenda é essa! </h3>
+    <p>
+      <label>
+        <input type="checkbox"  id='opcIncorreta' class="filled-in checkbox-input" onClick='resposta()'/>
+        <span class='input-text'>Pirão</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox"  id='opcInorreta' class="filled-in checkbox-input" onClick='resposta()'/>
+        <span class='input-text'>Sopa de Legumes</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input type="checkbox" id='opcCorreta' class="filled-in checkbox-input" onClick='resposta()'/>
+        <span class='input-text'>Sopa de Frango</span>
+      </label>
+    </p>
+  </div>
+  <div id='opcResposta'>
+    <h3> Sopa de frango </h3>
+  </div>
+</div>
+
+<script type='text/javascript'>
+  function resposta() {
+    document.getElementById("opcGeral").style.display = "none";
+    document.getElementById("opcResposta").style.display = "inline-block";
+  }
+</script>
