@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*** Colors ***/
+$primary-color: #232531;
+$secondary-color: #ED4833;
+
+nav {
+  background-color: $primary-color;
+  padding-left: 2%;
+  padding-right: 2%;
+  color: $secondary-color;
+  .brand-logo {
+    color: #7BDE24;
+    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .nav-button {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+body {
+  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Titillium Web', sans-serif;
+}
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  .typewriter {
+    .logo{
+      color: #7BDE24;
+      font-family: 'Share Tech Mono', monospace;
+      font-family: 'Orbitron', sans-serif;
+      padding-top:5px;
+      justify-content: space-between;
+    }
+  }
+  .header-text {
+    opacity: 0;
+    text-align: center;
+    .title {
+      font-size:3rem;
+      color: $secondary-color;
+    }
+    .content {
+      font-size:1.5rem;
+      color: white;
+    }
+  }
+  .visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+}
+
+.no-shadows {
+  box-shadow: none!important;
+}
+
+body {
+  background-color: $primary-color;
+  color: white;
+}
+
+.orange-background {
+  background-color: $secondary-color;
+}
+
+svg path {
+  fill: $secondary-color !important;
+}
+
+.svg {
+  margin: auto;
+  display: block;
+  width:300px !important;
+  height:300px !important;
+}
+
+.green-background {
+  background-color: #7BDE24;
+}
+
+.typewriter {
+  display: inline-block;
+}
+
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+  animation: typing 3s steps(30, end), blink .75s step-end infinite;
+  white-space: nowrap;
+  border-right: 4px solid #7BDE24;
+  box-sizing: border-box;
+}
+
+@keyframes typing {
+  from {
+      width: 0%
+  }
+  to {
+      width: 100%
+  }
+}
+
+@keyframes blink {
+  from, to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: #7BDE24;
+  }
+}

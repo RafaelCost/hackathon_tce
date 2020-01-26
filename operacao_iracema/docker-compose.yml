@@ -1,0 +1,21 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    ports:
+      - '5050:5432'
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    container_name: operacao_iracema
+    #command: rails s -b 0.0.0.0 -p 3005
+    volumes:
+      - .:/operacao_iracema
+    ports:
+      - '3005:3005'
+    depends_on:
+      - db
+    entrypoint: /bin/bash
+    stdin_open: true
+    tty: true
